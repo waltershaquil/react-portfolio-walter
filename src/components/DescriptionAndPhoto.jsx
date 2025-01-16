@@ -11,7 +11,7 @@ import { Handshake } from "lucide-react";
 import { Smartphone } from "lucide-react";
 import { Languages } from "lucide-react";
 import { PaintbrushVertical } from "lucide-react";
-import me from "../resources/subject.png";
+import me from "../resources/Subject.png";
 
 function DescriptioAndPhoto() {
   const [projectos, setProjectos] = useState([
