@@ -1,3 +1,5 @@
+import cv from "../resources/cv_walter_shaquil_da_conceicao.pdf";
+
 function FooterBottom() {
   return (
     <div class="max-w-2xl mx-auto rounded-md">
@@ -11,7 +13,7 @@ function FooterBottom() {
               <ul>
                 <li class="mb-4">
                   <a
-                    href="src\resources\cv_walter_shaquil_da_conceicao.pdf"
+                    href={cv}
                     target="_blank"
                     class="text-gray-600 hover:underline dark:text-gray-400"
                   >

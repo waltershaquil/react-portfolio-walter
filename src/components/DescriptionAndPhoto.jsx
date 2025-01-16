@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  SquareUserRound,
   Clapperboard,
   BookmarkCheck,
   CircleDollarSign,
@@ -12,6 +11,7 @@ import { Handshake } from "lucide-react";
 import { Smartphone } from "lucide-react";
 import { Languages } from "lucide-react";
 import { PaintbrushVertical } from "lucide-react";
+import me from "../resources/subject.png";
 
 function DescriptioAndPhoto() {
   const [projectos, setProjectos] = useState([
@@ -56,7 +56,7 @@ function DescriptioAndPhoto() {
           <div className="flex-grow"></div>
         </div>
         <div className="w-1/2 min-h-20 bg-[#1A1A2A] rounded-md m-1 items-center flex flex-col">
-          <img src="src\resources\Subject.png" alt="walter" />
+          <img src={me} alt="walter" />
         </div>
       </div>
 

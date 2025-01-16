@@ -1,3 +1,6 @@
+import logo1 from "../resources/circular logo website-01.png";
+
+
 function HeaderTop() {
   return (
     <div>
@@ -5,7 +8,7 @@ function HeaderTop() {
         <header class="w-full text-gray-700 bg-[#1A1A2A] body-font">
           <div class="container flex flex-col items-start p-6 mx-auto md:flex-row">
             <img
-              src="src\resources\circular logo website-01.png"
+              src={logo1}
               alt="Logo"
               className="h-16 w-16 object-contain -mt-2"
             />
