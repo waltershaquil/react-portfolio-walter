@@ -44,7 +44,7 @@ function DescriptioAndPhoto() {
   return (
     <div className="p-20">
       <div className="w-full text-white min-h-full gap-4 rounded-md flex flex-row mb-4">
-        <div className="w-1/2 min-h-20 bg-[#1A1A2A] rounded-md flex flex-col justify-between">
+        <div className="w-1/2 min-h-20 rounded-md flex flex-col justify-between">
           <div className="text-left text-2xl font-light mb-1">
             <p className="font-bold">Hi there, I'm</p>
             <text className="font-bold text-3xl mb-2">Walter Da Conceicao</text>
@@ -55,14 +55,12 @@ function DescriptioAndPhoto() {
           </div>
           <div className="flex-grow"></div>
         </div>
-        <div className="w-1/2 min-h-20 bg-[#1A1A2A] rounded-md m-1 items-center flex flex-col">
+        <div className="w-1/2 min-h-20 rounded-md m-1 items-center flex flex-col">
           <img src={me} alt="walter" />
         </div>
       </div>
 
-      <div className="h-[2px] bg-[#705FD1] my-10"></div>
-
-      <div className="flex flex-col text-center bg-[#1A1A2A] w-full mb-20">
+      <div className="flex flex-col text-center  w-full mb-20">
         <h2 className="font-bold text-start text-white text-3xl">About me:</h2>
         <p className="text-white text-start text-s mb-10">
           {" "}
@@ -73,46 +71,44 @@ function DescriptioAndPhoto() {
           tech world! Throughout my journey i acquired some skills, some of them
           are:
         </p>
-        <div className="bg-[#1A1A2A] text-white font-bold w-full h-full grid grid-cols-4 gap-4">
-          <div className="bg-[#1A1A2A] min-h-[200px] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] rounded-md flex flex-col justify-center items-center text-center">
+        <div className=" text-white font-bold w-full h-full grid grid-cols-4 gap-4">
+          <div className=" min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
             <SquareDashedBottomCode />
             <p>Web Development</p>
           </div>
 
-          <div className="bg-[#1A1A2A] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] min-h-[200px] rounded-md flex flex-col items-center justify-center text-center">
+          <div className=" hover:bg-[#493091] outline outline-2 outline-[#493091] min-h-[200px] rounded-md flex flex-col items-center justify-center text-center">
             <Database />
             <p>Data Analytics</p>
             <p>& Data modeling</p>
           </div>
-          <div className="bg-[#1A1A2A] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
+          <div className=" hover:bg-[#493091] outline outline-2 outline-[#493091] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
             <Smartphone />
             <p>Mobile Development</p>
           </div>
-          <div className="bg-[#1A1A2A] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
+          <div className=" hover:bg-[#493091] outline outline-2 outline-[#493091] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
             <PaintbrushVertical />
             <p>Graphic Design and UI/UX</p>
           </div>
-          <div className="bg-[#1A1A2A] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
+          <div className=" hover:bg-[#493091] outline outline-2 outline-[#493091] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
             <Handshake />
             <p>Team work</p>
           </div>
-          <div className="bg-[#1A1A2A] hover:bg-[#705FD1] outline outline-2 outline-[#705FD1] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
+          <div className="hover:bg-[#493091] outline outline-2 outline-[#493091] min-h-[200px] rounded-md flex flex-col justify-center items-center text-center">
             <Languages />
             <p>Multilingual Communication</p>
           </div>
         </div>
       </div>
 
-      <div className="h-[2px] bg-[#705FD1] my-10"></div>
-
-      <div className="bg-[#1A1A2A] text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
+      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
         <h2 className="font-bold text-white text-3xl">Projects</h2>
         <a
           href="https://react-movies-movoo.vercel.app"
           target="_blank"
           title="Go to React Movies app"
         >
-          <div className="bg-[#171824] outline p-4 hover:bg-[#705FD1] outline-2 outline-[#705FD1] flex flex-row items-center text-center rounded-md min-h-[150px] gap-2">
+          <div className="outline p-4 hover:bg-[#493091] outline-2 outline-[#493091] flex flex-row items-center text-center rounded-md min-h-[150px] gap-2">
             <div className="  min-w-1/4 min-h-20 ">
               {" "}
               <Clapperboard className="h-[100px] w-[100px]" />
@@ -133,7 +129,7 @@ function DescriptioAndPhoto() {
           target="_blank"
           title="Go to React Movies app"
         >
-          <div className="bg-[#171824] p-4 hover:bg-[#705FD1] flex flex-row outline outline-2 outline-[#705FD1] items-center text-center rounded-md min-h-[150px] gap-2">
+          <div className=" p-4 hover:bg-[#493091] flex flex-row outline outline-2 outline-[#493091] items-center text-center rounded-md min-h-[150px] gap-2">
             <div className="min-w-1/4 min-h-20 ">
               {" "}
               <BookmarkCheck className="h-[100px] w-[100px]" />
@@ -154,7 +150,7 @@ function DescriptioAndPhoto() {
           target="_blank"
           title="Go to React Movies app"
         >
-          <div className="bg-[#171824] p-4 hover:bg-[#705FD1] flex flex-row outline outline-2 outline-[#705FD1] items-center text-center rounded-md min-h-[150px] gap-2">
+          <div className=" p-4 hover:bg-[#493091] flex flex-row outline outline-2 outline-[#493091] items-center text-center rounded-md min-h-[150px] gap-2">
             <div className="min-w-1/4 min-h-20 ">
               {" "}
               <CircleDollarSign className="h-[100px] w-[100px]" />
@@ -175,7 +171,7 @@ function DescriptioAndPhoto() {
           target="_blank"
           title="Go to React Movies app"
         >
-          <div className="bg-[#171824] p-4 hover:bg-[#705FD1] flex flex-row outline outline-2 outline-[#705FD1] items-center text-center rounded-md min-h-[150px] gap-2">
+          <div className=" p-4 hover:bg-[#493091] flex flex-row outline outline-2 outline-[#493091] items-center text-center rounded-md min-h-[150px] gap-2">
             <div className="  min-w-1/4 min-h-20 ">
               {" "}
               <Bomb className="h-[100px] w-[100px]" />
@@ -193,12 +189,11 @@ function DescriptioAndPhoto() {
         </a>
       </div>
 
-      <div className="h-[2px] bg-[#705FD1] my-20"></div>
 
-      <div className="bg-[#1A1A2A] text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
+      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
         <h2 className="font-bold text-white text-3xl">Formation</h2>
 
-        <div className="bg-[#171824] p-10 outline hover:bg-[#705FD1] outline-2 outline-[#705FD1] flex flex-row items-center text-center rounded-md min-h-[150px] gap-2">
+        <div className="p-10 outline hover:bg-[#493091] outline-2 outline-[#493091] flex flex-row items-center text-center rounded-md min-h-[150px] gap-2">
           <div className="text-left w-3/4 min-h-20 rounded-md">
             <h4 className="text-xl font-bold">
               Licenciatura em Engenharia Informática e de

@@ -12,13 +12,13 @@ function HeaderTop() {
               className="h-16 w-16 object-contain -mt-2"
             />
             <nav class="flex items-center justify-center text-base text-white md:ml-auto">
-              <a href="#_" class="mr-5 font-medium hover:text-[#705FD1]">
+              <a href="#_" class="mr-5 font-medium hover:text-[#493091]">
                 Home
               </a>
-              <a href="#_" class="mr-5 font-medium hover:text-[#705FD1]">
+              <a href="#_" class="mr-5 font-medium hover:text-[#493091]">
                 projectos
               </a>
-              <a href="#_" class="font-medium hover:text-[#705FD1]">
+              <a href="#_" class="font-medium hover:text-[#493091]">
                 Formação
               </a>
             </nav>
