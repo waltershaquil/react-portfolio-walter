@@ -1,11 +1,10 @@
 import logo1 from "../resources/circular logo website-01.png";
 
-
 function HeaderTop() {
   return (
     <div>
-      <div class="min-h-full bg-[#1A1A2A] min-w-screen sticky top-0 pb-10">
-        <header class="w-full text-gray-700 bg-[#1A1A2A] body-font">
+      <div class="min-h-full  min-w-screen sticky top-0 pb-10">
+        <header class="w-full text-gray-700 body-font">
           <div class="container flex flex-col items-start p-6 mx-auto md:flex-row">
             <img
               src={logo1}

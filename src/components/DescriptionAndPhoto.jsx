@@ -43,7 +43,7 @@ function DescriptioAndPhoto() {
 
   return (
     <div className="p-20">
-      <div className="w-full bg-[#1A1A2A] text-white min-h-full gap-4 rounded-md flex flex-row mb-4">
+      <div className="w-full text-white min-h-full gap-4 rounded-md flex flex-row mb-4">
         <div className="w-1/2 min-h-20 bg-[#1A1A2A] rounded-md flex flex-col justify-between">
           <div className="text-left text-2xl font-light mb-1">
             <p className="font-bold">Hi there, I'm</p>
