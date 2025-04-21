@@ -20,7 +20,7 @@ function DescriptioAndPhoto() {
       name: "Movoo",
       description:
         "Movoo is a ReactJS app that uses an API to showcase trending movies. Users can search for any movie, view details, and save their favorites to a personalized list. Simple, intuitive, and perfect for movie lovers!",
-      link: "",
+      link: "https://react-movies-movoo.vercel.app/",
     },
     {
       name: "TaskMngr",
