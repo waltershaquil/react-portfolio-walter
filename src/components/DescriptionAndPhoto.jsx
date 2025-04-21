@@ -43,7 +43,7 @@ function DescriptioAndPhoto() {
 
   return (
     <div className="p-20">
-      <div className="w-full text-white min-h-full gap-4 rounded-md flex flex-row mb-4">
+      <div className="w-full text-white min-h-full gap-4 rounded-md flex flex-row mb-[150px] mt-[100px]">
         <div className="w-1/2 min-h-20 rounded-md flex flex-col justify-between">
           <div className="text-left text-2xl font-light mb-1">
             <p className="font-bold">Hi there, I'm</p>
@@ -55,12 +55,14 @@ function DescriptioAndPhoto() {
           </div>
           <div className="flex-grow"></div>
         </div>
-        <div className="w-1/2 min-h-20 rounded-md m-1 items-center flex flex-col">
-          <img src={me} alt="walter" />
-        </div>
+        {/* This is a comment explaining why we're using the 'onClick' attribute 
+          <div className="w-1/2 min-h-20 rounded-md m-1 items-center flex flex-col">
+            <img src={me} alt="walter" />
+          </div>
+        */}
       </div>
 
-      <div className="flex flex-col text-center  w-full mb-20">
+      <div className="flex flex-col text-center  w-full mb-[150px]">
         <h2 className="font-bold text-start text-white text-3xl">About me:</h2>
         <p className="text-white text-start text-s mb-10">
           {" "}
@@ -101,7 +103,7 @@ function DescriptioAndPhoto() {
         </div>
       </div>
 
-      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
+      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-[150px] ">
         <h2 className="font-bold text-white text-3xl">Projects</h2>
         <a
           href="https://react-movies-movoo.vercel.app"
@@ -189,8 +191,7 @@ function DescriptioAndPhoto() {
         </a>
       </div>
 
-
-      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-20">
+      <div className=" text-white min-h-full w-full rounded-md flex flex-col gap-4 mb-[150px]">
         <h2 className="font-bold text-white text-3xl">Formation</h2>
 
         <div className="p-10 outline hover:bg-[#493091] outline-2 outline-[#493091] flex flex-row items-center text-center rounded-md min-h-[150px] gap-2">
