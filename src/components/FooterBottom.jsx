@@ -2,8 +2,8 @@ import cv from "../resources/cv_walter_shaquil_da_conceicao.pdf";
 
 function FooterBottom() {
   return (
-    <div class="max-w-2xl mx-auto rounded-md">
-      <footer class="p-4 bg-[#171824] sm:p-6">
+    <div class="max-w-2xl mx-auto min-w-full rounded-md">
+      <footer class="p-4 bg-[#111111] sm:p-6">
         <div class="md:flex md:justify-center">
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 text-center">
             <div>
