@@ -16,10 +16,10 @@ function HeaderTop() {
                 Home
               </a>
               <a href="#_" class="mr-5 font-medium hover:text-[#493091]">
-                projectos
+                projects
               </a>
               <a href="#_" class="font-medium hover:text-[#493091]">
-                Formação
+                Formation
               </a>
             </nav>
           </div>
