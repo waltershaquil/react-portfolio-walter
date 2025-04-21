@@ -1,4 +1,3 @@
-// no changes to imports
 import React, { useState } from "react";
 import {
   Clapperboard,
@@ -13,6 +12,7 @@ import {
   PaintbrushVertical,
 } from "lucide-react";
 import me from "../resources/Subject.png";
+import { motion } from "framer-motion";
 
 function DescriptioAndPhoto() {
   const [projectos, setProjectos] = useState([
@@ -44,7 +44,7 @@ function DescriptioAndPhoto() {
 
   return (
     <div className="p-6 md:p-20">
-      <div className="w-full text-white gap-4 rounded-md flex flex-col md:flex-row mb-20 mt-10">
+      <div className="w-full text-white gap-4 h-[400px] rounded-md flex flex-col md:flex-row ">
         <div className="w-full md:w-1/2 flex flex-col justify-between">
           <div className="text-left text-2xl font-light mb-4">
             <p className="font-bold">Hi there, I'm</p>
@@ -57,14 +57,17 @@ function DescriptioAndPhoto() {
             </p>
           </div>
         </div>
-        {/* <div className="w-full md:w-1/2 flex justify-center">
-          <img src={me} alt="walter" className="max-w-[250px] w-full h-auto rounded-lg" />
-        </div> */}
       </div>
 
-      <div className="flex flex-col text-center w-full mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col text-center w-full mb-20"
+      >
         <h2 className="font-bold text-start text-white text-3xl">About me:</h2>
-        <p className="text-white text-start text-base mb-10">
+        <p className="text-white text-start text-base mb-20">
           I am a passionate developer with a knack for creating functional and
           visually appealing applications. From dynamic web solutions to
           engaging mobile apps, I love solving problems with code. Welcome to my
@@ -72,51 +75,55 @@ function DescriptioAndPhoto() {
           tech world! Throughout my journey I acquired some skills:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white font-bold">
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
-            <SquareDashedBottomCode />
-            <p>Web Development</p>
-          </div>
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col items-center justify-center text-center">
-            <Database />
-            <p>Data Analytics</p>
-            <p>& Data Modeling</p>
-          </div>
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
-            <Smartphone />
-            <p>Mobile Development</p>
-          </div>
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
-            <PaintbrushVertical />
-            <p>Graphic Design and UI/UX</p>
-          </div>
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
-            <Handshake />
-            <p>Team work</p>
-          </div>
-          <div className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center">
-            <Languages />
-            <p>Multilingual Communication</p>
-          </div>
+          {[ 
+            { icon: <SquareDashedBottomCode />, label: "Web Development" },
+            { icon: <Database />, label: "Data Analytics", label2: "Data Modeling" },
+            { icon: <Smartphone />, label: "Mobile Development" },
+            { icon: <PaintbrushVertical />, label: "Graphic Design and UI/UX" },
+            { icon: <Handshake />, label: "Team work" },
+            { icon: <Languages />, label: "Multilingual Communication" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="min-h-[200px] hover:bg-[#493091] outline outline-2 outline-[#493091] rounded-md flex flex-col justify-center items-center text-center"
+            >
+              {item.icon}
+              <p>{item.label}</p>
+              {item.label2 && <p>{item.label2}</p>}
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="text-white w-full flex flex-col gap-4 mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-white w-full flex flex-col gap-4 mb-20"
+      >
         <h2 className="font-bold text-3xl">Projects</h2>
         {projectos.map((proj, idx) => (
-          <a
+          <motion.a
             href={proj.link}
             target="_blank"
             rel="noopener noreferrer"
             key={idx}
             title={`Go to ${proj.name}`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
             <div className="outline outline-2 outline-[#493091] hover:bg-[#493091] p-4 flex flex-col sm:flex-row items-center rounded-md gap-4">
               <div className="min-h-20 flex justify-center">
                 {idx === 0 && <Clapperboard className="h-[80px] w-[80px]" />}
                 {idx === 1 && <BookmarkCheck className="h-[80px] w-[80px]" />}
-                {idx === 2 && (
-                  <CircleDollarSign className="h-[80px] w-[80px]" />
-                )}
+                {idx === 2 && <CircleDollarSign className="h-[80px] w-[80px]" />}
                 {idx === 3 && <Bomb className="h-[80px] w-[80px]" />}
               </div>
               <div className="text-left w-full">
@@ -124,22 +131,27 @@ function DescriptioAndPhoto() {
                 <p className="text-sm font-medium">{proj.description}</p>
               </div>
             </div>
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="text-white w-full flex flex-col gap-4 mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-white w-full flex flex-col gap-4 mb-20"
+      >
         <h2 className="font-bold text-3xl">Formation</h2>
         <div className="p-6 outline hover:bg-[#493091] outline-2 outline-[#493091] rounded-md">
           <h4 className="text-xl font-bold">
-            Licenciatura em Engenharia Informática e de Telecomunicações
-            (Finalist)
+            Licenciatura em Engenharia Informática e de Telecomunicações (Finalist)
           </h4>
           <p className="text-sm font-medium">
             Instituto Superior de Transportes e Comunicações (ISUTC)
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
