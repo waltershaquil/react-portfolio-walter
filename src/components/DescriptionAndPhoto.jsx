@@ -75,9 +75,13 @@ function DescriptioAndPhoto() {
           tech world! Throughout my journey I acquired some skills:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white font-bold">
-          {[ 
+          {[
             { icon: <SquareDashedBottomCode />, label: "Web Development" },
-            { icon: <Database />, label: "Data Analytics", label2: "Data Modeling" },
+            {
+              icon: <Database />,
+              label: "Data Analytics",
+              label2: "Data Modeling",
+            },
             { icon: <Smartphone />, label: "Mobile Development" },
             { icon: <PaintbrushVertical />, label: "Graphic Design and UI/UX" },
             { icon: <Handshake />, label: "Team work" },
@@ -123,7 +127,9 @@ function DescriptioAndPhoto() {
               <div className="min-h-20 flex justify-center">
                 {idx === 0 && <Clapperboard className="h-[80px] w-[80px]" />}
                 {idx === 1 && <BookmarkCheck className="h-[80px] w-[80px]" />}
-                {idx === 2 && <CircleDollarSign className="h-[80px] w-[80px]" />}
+                {idx === 2 && (
+                  <CircleDollarSign className="h-[80px] w-[80px]" />
+                )}
                 {idx === 3 && <Bomb className="h-[80px] w-[80px]" />}
               </div>
               <div className="text-left w-full">
@@ -145,7 +151,8 @@ function DescriptioAndPhoto() {
         <h2 className="font-bold text-3xl">Formation</h2>
         <div className="p-6 outline hover:bg-[#493091] outline-2 outline-[#493091] rounded-md">
           <h4 className="text-xl font-bold">
-            Licenciatura em Engenharia Informática e de Telecomunicações (Finalist)
+            Licenciatura em Engenharia Informática e de Telecomunicações
+            (Finalist)
           </h4>
           <p className="text-sm font-medium">
             Instituto Superior de Transportes e Comunicações (ISUTC)
