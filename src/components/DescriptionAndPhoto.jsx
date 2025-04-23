@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Car,
   Clapperboard,
   BookmarkCheck,
   CircleDollarSign,
@@ -16,6 +17,12 @@ import { motion } from "framer-motion";
 
 function DescriptioAndPhoto() {
   const [projectos, setProjectos] = useState([
+    {
+      name: "Car Sales System",
+      description:
+        "A full-stack car dealership management app. The frontend is built in React, and the backend is a RESTful API built with Spring Boot and PostgreSQL. It supports managing cars, customers, and sales records.",
+      link: "https://car-sales-react-fawn.vercel.app/",
+    },
     {
       name: "Movoo",
       description:
@@ -125,12 +132,13 @@ function DescriptioAndPhoto() {
           >
             <div className="outline outline-2 outline-[#493091] hover:bg-[#493091] p-4 flex flex-col sm:flex-row items-center rounded-md gap-4">
               <div className="min-h-20 flex justify-center">
-                {idx === 0 && <Clapperboard className="h-[80px] w-[80px]" />}
-                {idx === 1 && <BookmarkCheck className="h-[80px] w-[80px]" />}
-                {idx === 2 && (
+                {idx === 0 && <Car className="h-[80px] w-[80px]" />}
+                {idx === 1 && <Clapperboard className="h-[80px] w-[80px]" />}
+                {idx === 2 && <BookmarkCheck className="h-[80px] w-[80px]" />}
+                {idx === 3 && (
                   <CircleDollarSign className="h-[80px] w-[80px]" />
                 )}
-                {idx === 3 && <Bomb className="h-[80px] w-[80px]" />}
+                {idx === 4 && <Bomb className="h-[80px] w-[80px]" />}
               </div>
               <div className="text-left w-full">
                 <h4 className="text-xl font-bold">{proj.name}</h4>
