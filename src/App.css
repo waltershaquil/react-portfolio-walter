@@ -19,9 +19,6 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-html, body {
-  background-color: #000000;
-}
 
 @keyframes logo-spin {
   from {
