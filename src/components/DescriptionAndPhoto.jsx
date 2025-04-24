@@ -11,6 +11,7 @@ import {
   Smartphone,
   Languages,
   PaintbrushVertical,
+  Lock,
 } from "lucide-react";
 import me from "../resources/Subject.png";
 import { motion } from "framer-motion";
@@ -46,6 +47,12 @@ function DescriptioAndPhoto() {
       description:
         "Mine Swpr is a mobile Minesweeper game built with Flutter. It features an intuitive and responsive design, letting players uncover tiles and flag mines in a seamless gameplay experience. A classic puzzle game tailored for mobile!",
       link: "https://github.com/waltershaquil/flutter-mine-sweeper",
+    },
+    {
+      name: "Auth System",
+      description:
+        "A secure authentication system with Angular frontend and Spring Boot backend. Users are stored in a PostgreSQL database. Once authenticated, users can view a list of cars fetched from a custom API built with Spring.",
+      link: "https://auth-angular-kappa.vercel.app/",
     },
   ]);
 
@@ -139,6 +146,7 @@ function DescriptioAndPhoto() {
                   <CircleDollarSign className="h-[80px] w-[80px]" />
                 )}
                 {idx === 4 && <Bomb className="h-[80px] w-[80px]" />}
+                {idx === 5 && <Lock className="h-[80px] w-[80px]" />}
               </div>
               <div className="text-left w-full">
                 <h4 className="text-xl font-bold">{proj.name}</h4>
