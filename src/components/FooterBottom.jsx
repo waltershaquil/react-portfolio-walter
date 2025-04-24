@@ -7,7 +7,7 @@ function FooterBottom() {
         <div class="md:flex md:justify-center">
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 text-center">
             <div>
-              <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 class="mb-6 text-sm font-semibold uppercase text-white">
                 Resources
               </h3>
               <ul>
@@ -15,7 +15,7 @@ function FooterBottom() {
                   <a
                     href={cv}
                     target="_blank"
-                    class="text-gray-600 hover:underline dark:text-gray-400"
+                    class=" hover:underline text-gray-400"
                   >
                     Resume
                   </a>
@@ -24,7 +24,7 @@ function FooterBottom() {
               </ul>
             </div>
             <div>
-              <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 class="mb-6 text-sm font-semibold uppercase text-white">
                 Follow me
               </h3>
               <ul>
@@ -32,7 +32,7 @@ function FooterBottom() {
                   <a
                     href="https://github.com/waltershaquil"
                     target="_blank"
-                    class="text-gray-600 hover:underline dark:text-gray-400"
+                    class="hover:underline text-gray-400"
                   >
                     Github
                   </a>
@@ -41,7 +41,7 @@ function FooterBottom() {
                   <a
                     href="https://www.behance.net/waltershaquil"
                     target="_blank"
-                    class="text-gray-600 hover:underline dark:text-gray-400"
+                    class="hover:underline text-gray-400"
                   >
                     Behance
                   </a>
@@ -49,25 +49,17 @@ function FooterBottom() {
               </ul>
             </div>
             <div>
-              <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 class="mb-6 text-sm font-semibold uppercase text-white">
                 Contact us
               </h3>
               <ul>
                 <li class="mb-4">
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="text-gray-600 dark:text-gray-400"
-                  >
+                  <a href="#" target="_blank" class="text-gray-400">
                     Waltershaquil@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="text-gray-600 dark:text-gray-400"
-                  >
+                  <a href="#" target="_blank" class="text-gray-400">
                     +258 84 69 57 899
                   </a>
                 </li>
@@ -82,7 +74,7 @@ function FooterBottom() {
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a
-              href="https://www.instagram.com/walter_shaquil/profilecard/?igsh=MW14NXFob3k4ZGNmeQ== "
+              href="https://www.instagram.com/walter_shaquil/profilecard"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
