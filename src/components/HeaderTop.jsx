@@ -19,7 +19,7 @@ function HeaderTop() {
                 projects
               </a>
               <a href="#_" class="font-medium hover:text-[#493091]">
-                Formation
+                Education
               </a>
             </nav>
           </div>

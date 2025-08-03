@@ -164,15 +164,20 @@ function DescriptioAndPhoto() {
         transition={{ duration: 0.6 }}
         className="text-white w-full flex flex-col gap-4 mb-20"
       >
-        <h2 className="font-bold text-3xl">Formation</h2>
+        <h2 className="font-bold text-3xl">Education and Certifications</h2>
         <div className="p-6 outline hover:bg-[#493091] outline-2 outline-[#493091] rounded-md">
           <h4 className="text-xl font-bold">
             Licenciatura em Engenharia Informática e de Telecomunicações
-            (Finalist)
           </h4>
           <p className="text-sm font-medium">
             Instituto Superior de Transportes e Comunicações (ISUTC)
           </p>
+        </div>
+        <div className="p-6 outline hover:bg-[#493091] outline-2 outline-[#493091] rounded-md">
+          <h4 className="text-xl font-bold">
+            Google Cybersecurity Certificate{" "}
+          </h4>
+          <p className="text-sm font-medium">Google - Coursera</p>
         </div>
       </motion.div>
     </div>
