@@ -16,6 +16,7 @@ import {
   Calendar,
   GraduationCap,
 } from "lucide-react";
+import walter from "../resources/walter.jpg";
 
 const DescriptionAndPhoto = () => {
   const projects = [
@@ -154,7 +155,7 @@ const DescriptionAndPhoto = () => {
                 <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-1 hover:scale-105 transition-transform duration-500">
                   <div className="bg-card rounded-3xl overflow-hidden">
                     <img
-                      src="/src/resources/walter.jpg"
+                      src={walter}
                       alt="Walter Da Conceicao"
                       className="w-[600px] h-[600px] object-cover"
                     />
