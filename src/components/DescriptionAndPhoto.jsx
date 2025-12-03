@@ -95,15 +95,19 @@ const DescriptionAndPhoto = () => {
   };
 
   return (
-    <div className="px-6 md:px-20 pb-20 text-white">
+    <div className="container mx-auto px-6 pb-20 text-white">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="min-h-screen flex items-center justify-center pt-20"
+        className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
       >
-        <div className="w-full max-w-6xl ">
+        {/* Background Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+
+        <div className="w-full max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <motion.div
@@ -111,13 +115,16 @@ const DescriptionAndPhoto = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
+                <div className="inline-block px-4 py-1.5 mb-4 border border-primary/30 rounded-full bg-primary/10 backdrop-blur-sm">
+                  <span className="text-primary-light font-medium text-sm">Available for work</span>
+                </div>
                 <p className="text-foreground/70 text-lg mb-2">Hi there, I'm</p>
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-white">
+                <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+                  <span className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-transparent animate-gradient-x">
                     Walter Da Conceicao
                   </span>
                 </h1>
-                <p className="text-lg text-foreground/80 leading-relaxed">
+                <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
                   I'm a Developer, welcome to my page. Here I have some
                   information about me, my projects, and more.
                 </p>
@@ -131,13 +138,13 @@ const DescriptionAndPhoto = () => {
               >
                 <a
                   href="#projects"
-                  className="px-8 py-3 bg-primary hover:bg-primary-light text-primary-foreground rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
+                  className="px-8 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50 flex items-center gap-2"
                 >
                   View Projects
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-3 border-2 border-primary text-foreground hover:bg-primary/10 rounded-lg font-medium transition-all"
+                  className="px-8 py-3 border-2 border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary rounded-lg font-medium transition-all hover:scale-105"
                 >
                   Contact Me
                 </a>
@@ -151,13 +158,13 @@ const DescriptionAndPhoto = () => {
               className="relative"
             >
               <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-accent rounded-3xl blur-xl opacity-50 animate-glow"></div>
-                <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-1 hover:scale-105 transition-transform duration-500">
-                  <div className="bg-card rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-accent rounded-3xl blur-2xl opacity-60 animate-glow"></div>
+                <div className="relative bg-glass p-2 rounded-3xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                  <div className="bg-card rounded-2xl overflow-hidden shadow-2xl">
                     <img
                       src={walter}
                       alt="Walter Da Conceicao"
-                      className="w-[600px] h-[600px] object-cover"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     />
                   </div>
                 </div>
@@ -173,18 +180,21 @@ const DescriptionAndPhoto = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="py-20"
+        className="py-20 relative"
       >
-        <motion.div variants={itemVariants}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-            About me
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -z-10"></div>
+
+        <motion.div variants={itemVariants} className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 inline-block relative">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">About me</span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full opacity-50"></span>
           </h2>
-          <p className="text-foreground/80 text-lg leading-relaxed mb-16 max-w-4xl">
+          <p className="text-foreground/80 text-lg leading-relaxed max-w-4xl mx-auto">
             I am a passionate developer with a knack for creating functional and
             visually appealing applications. From dynamic web solutions to
             engaging mobile apps, I love solving problems with code. Welcome to
             my page, where you can explore my projects, skills, and journey in
-            the tech world! Throughout my journey I acquired some skills:
+            the tech world!
           </p>
         </motion.div>
 
@@ -197,15 +207,17 @@ const DescriptionAndPhoto = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="group relative min-h-[200px] bg-card border-2 border-primary/30 hover:border-primary rounded-xl p-6 flex flex-col justify-center items-center text-center transition-all cursor-pointer overflow-hidden"
+              className="group relative min-h-[200px] bg-glass p-6 flex flex-col justify-center items-center text-center transition-all cursor-pointer overflow-hidden hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <skill.icon className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform relative z-10" />
-              <p className="font-semibold text-lg relative z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="p-4 rounded-full bg-white/5 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                <skill.icon className="w-10 h-10 text-primary-light group-hover:text-primary transition-colors relative z-10" />
+              </div>
+              <p className="font-semibold text-lg relative z-10 group-hover:text-white transition-colors">
                 {skill.label}
               </p>
               {skill.label2 && (
-                <p className="font-semibold text-lg relative z-10">
+                <p className="font-semibold text-lg relative z-10 group-hover:text-white transition-colors">
                   {skill.label2}
                 </p>
               )}
@@ -225,12 +237,12 @@ const DescriptionAndPhoto = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent inline-block"
         >
           Projects
         </motion.h2>
 
-        <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, idx) => (
             <motion.a
               key={idx}
@@ -238,21 +250,25 @@ const DescriptionAndPhoto = () => {
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}
-              whileHover={{ scale: 1.02, x: 10 }}
-              className="group block"
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="group block h-full"
             >
-              <div className="bg-card border-2 border-primary/30 hover:border-primary rounded-xl p-6 flex flex-col sm:flex-row items-center gap-6 transition-all hover:shadow-lg hover:shadow-primary/20">
-                <div className="shrink-0 p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                  <project.icon className="w-16 h-16 text-primary" />
+              <div className="bg-glass p-6 h-full flex flex-col hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
+                    <project.icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
+                  </div>
+                  <div className="px-3 py-1 rounded-full bg-white/5 text-xs font-medium text-foreground/60 border border-white/10">
+                    View Project
+                  </div>
                 </div>
-                <div className="text-left w-full">
-                  <h4 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {project.name}
-                  </h4>
-                  <p className="text-foreground/70 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+
+                <h4 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {project.name}
+                </h4>
+                <p className="text-foreground/70 leading-relaxed text-sm flex-grow">
+                  {project.description}
+                </p>
               </div>
             </motion.a>
           ))}
@@ -270,31 +286,37 @@ const DescriptionAndPhoto = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
         >
           Experience
         </motion.h2>
 
         <motion.div
           variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          className="bg-card border-2 border-primary/30 hover:border-primary rounded-xl p-8 transition-all hover:shadow-lg hover:shadow-primary/20"
+          whileHover={{ scale: 1.01 }}
+          className="bg-glass p-8 hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10"
         >
-          <div className="flex items-start gap-6">
-            <div className="shrink-0 p-4 bg-primary/10 rounded-lg">
-              <Briefcase className="w-12 h-12 text-primary" />
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="shrink-0">
+              <div className="p-4 bg-primary/10 rounded-xl inline-block">
+                <Briefcase className="w-10 h-10 text-primary" />
+              </div>
             </div>
-            <div className="flex-1 ">
-              <h3 className="text-2xl font-bold mb-2">
-                Desenvolvedor de Sistemas
-              </h3>
-              <p className="text-primary text-lg font-semibold mb-3">
+            <div className="flex-1">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                <h3 className="text-2xl font-bold text-white">
+                  Desenvolvedor de Sistemas
+                </h3>
+                <div className="flex items-center gap-2 text-accent bg-accent/10 px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0 w-fit">
+                  <Calendar className="w-4 h-4" />
+                  <span>Sept 2025 - Present</span>
+                </div>
+              </div>
+
+              <p className="text-primary-light text-lg font-semibold mb-4">
                 BVM - Bolsa de Valores de Moçambique
               </p>
-              <div className="flex items-center gap-2 text-foreground/70 mb-4">
-                <Calendar className="w-4 h-4" />
-                <span>Internship - Septmber 2025 - Present</span>
-              </div>
+
               <p className="text-foreground/80 leading-relaxed">
                 Gained hands-on experience in systems development, working with
                 modern technologies and contributing to real-world projects.
@@ -317,28 +339,29 @@ const DescriptionAndPhoto = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
         >
-          Education and Certifications
+          Education & Certifications
         </motion.h2>
 
-        <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <motion.div
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
-            className="bg-card border-2 border-primary/30 hover:border-primary rounded-xl p-8 transition-all hover:shadow-lg hover:shadow-primary/20"
+            className="bg-glass p-8 hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 h-full"
           >
             <div className="flex items-start gap-6">
-              <div className="shrink-0 p-4 bg-primary/10 rounded-lg">
-                <GraduationCap className="w-12 h-12 text-primary" />
+              <div className="shrink-0 p-4 bg-primary/10 rounded-xl">
+                <GraduationCap className="w-10 h-10 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Licenciatura em Engenharia Informática e de Telecomunicações
+                <h3 className="text-xl font-bold mb-2 text-white">
+                  Licenciatura em Engenharia Informática
                 </h3>
-                <p className="text-foreground/70 text-lg">
+                <p className="text-primary-light text-sm mb-1">
                   Instituto Superior de Transportes e Comunicações (ISUTC)
                 </p>
+                <p className="text-foreground/60 text-xs">Completed</p>
               </div>
             </div>
           </motion.div>
@@ -346,17 +369,18 @@ const DescriptionAndPhoto = () => {
           <motion.div
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
-            className="bg-card border-2 border-primary/30 hover:border-primary rounded-xl p-8 transition-all hover:shadow-lg hover:shadow-primary/20"
+            className="bg-glass p-8 hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 h-full"
           >
             <div className="flex items-start gap-6">
-              <div className="shrink-0 p-4 bg-primary/10 rounded-lg">
-                <Lock className="w-12 h-12 text-primary" />
+              <div className="shrink-0 p-4 bg-primary/10 rounded-xl">
+                <Lock className="w-10 h-10 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">
+                <h3 className="text-xl font-bold mb-2 text-white">
                   Google Cybersecurity Certificate
                 </h3>
-                <p className="text-foreground/70 text-lg">Google - Coursera</p>
+                <p className="text-primary-light text-sm mb-1">Google - Coursera</p>
+                <p className="text-foreground/60 text-xs">Professional Certificate</p>
               </div>
             </div>
           </motion.div>

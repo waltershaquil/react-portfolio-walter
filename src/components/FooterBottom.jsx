@@ -12,13 +12,17 @@ import cv from "../resources/cv-11-2025.pdf";
 
 const FooterBottom = () => {
   return (
-    <footer className="border-t border-border/50 bg-gradient-to-b from-[#0b0b0f] via-[#15151d] to-[#1c1033] text-white backdrop-blur-md">
-      <div className="container mx-auto px-6 py-20">
+    <footer className="border-t border-white/10 bg-glass backdrop-blur-xl text-white relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10"></div>
+
+      <div className="container mx-auto px-6 py-20 relative z-10">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent inline-block">
               Walter Da Conceição
             </h3>
             <p className="text-foreground/70 text-base leading-relaxed max-w-sm">
@@ -29,10 +33,11 @@ const FooterBottom = () => {
 
           {/* Resources Section */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">
+            <h4 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Resources
+              <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary rounded-full"></span>
             </h4>
-            <ul className="space-y-3 text-foreground/70">
+            <ul className="space-y-4 text-foreground/70">
               <FooterLink
                 href={cv}
                 icon={<FileText className="w-4 h-4" />}
@@ -61,10 +66,11 @@ const FooterBottom = () => {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">
+            <h4 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Contact
+              <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary rounded-full"></span>
             </h4>
-            <ul className="space-y-3 text-foreground/70">
+            <ul className="space-y-4 text-foreground/70">
               <FooterLink
                 href="mailto:Waltershaquil@gmail.com"
                 icon={<Mail className="w-4 h-4" />}
@@ -80,7 +86,7 @@ const FooterBottom = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-border/50">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
           <p className="text-foreground/70 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} Walter Da Conceição. All Rights
             Reserved.
@@ -115,10 +121,10 @@ const FooterLink = ({ href, icon, text }) => (
       rel="noopener noreferrer"
       className="flex items-center gap-3 hover:text-primary transition-all group"
     >
-      <span className="text-primary group-hover:scale-110 transition-transform">
+      <span className="text-primary group-hover:scale-110 transition-transform p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20">
         {icon}
       </span>
-      {text}
+      <span className="group-hover:translate-x-1 transition-transform">{text}</span>
     </a>
   </li>
 );
@@ -128,7 +134,7 @@ const SocialIcon = ({ href, icon }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-2.5 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110"
+    className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-all hover:scale-110 hover:rotate-12 border border-white/10 hover:border-primary/50"
   >
     {icon}
   </a>

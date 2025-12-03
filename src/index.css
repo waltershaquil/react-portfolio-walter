@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-primary: hsl(260, 80%, 60%);
+  --color-primary-light: hsl(260, 80%, 70%);
+  --color-primary-dark: hsl(260, 80%, 50%);
+  --color-accent: hsl(340, 70%, 60%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  color: var(--color-primary-light);
+}
