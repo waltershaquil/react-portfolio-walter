@@ -39,8 +39,8 @@ const HeaderTop = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-glass shadow-lg py-2"
-          : "bg-transparent py-4"
+        ? "bg-glass shadow-lg py-2"
+        : "bg-transparent py-4"
         }`}
     >
       <div className="container mx-auto px-6 text-white">
@@ -71,7 +71,7 @@ const HeaderTop = () => {
             <NavLink onClick={() => scrollToSection("education")}>
               Education
             </NavLink>
-
+            {/*
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-white/10 transition-colors text-foreground/80 hover:text-primary"
@@ -79,6 +79,8 @@ const HeaderTop = () => {
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </button>
+
+            */}
           </nav>
 
           {/* Mobile Menu Button */}
