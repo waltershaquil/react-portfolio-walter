@@ -4,14 +4,43 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: hsl(260, 80%, 60%);
-  --color-primary-light: hsl(260, 80%, 70%);
-  --color-primary-dark: hsl(260, 80%, 50%);
-  --color-accent: hsl(340, 70%, 60%);
+  /* Light Mode (Default) */
+  --color-primary: 222 47% 11%;
+  /* Navy Blue #0F172A */
+  --color-primary-light: 215 25% 27%;
+  /* Lighter Navy */
+  --color-primary-dark: 222 47% 11%;
+  /* Darker Navy */
+  --color-accent: 24 95% 53%;
+  /* Orange #F97316 */
+
+  --color-background: 0 0% 100%;
+  /* White */
+  --color-foreground: 222 47% 11%;
+  /* Navy Text */
+
   --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-html, body {
+.dark {
+  /* Dark Mode Overrides */
+  --color-primary: 217 91% 60%;
+  /* Lighter Blue for dark mode visibility */
+  --color-primary-light: 217 91% 70%;
+  --color-primary-dark: 217 91% 50%;
+  --color-accent: 24 95% 53%;
+  /* Keep Orange */
+
+  --color-background: 222 47% 11%;
+  /* Navy Background */
+  --color-foreground: 210 40% 98%;
+  /* White Text */
+}
+
+html,
+body {
   font-family: var(--font-sans);
-  color: var(--color-primary-light);
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
