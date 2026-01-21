@@ -74,7 +74,7 @@ const FooterBottom = () => {
               <FooterLink
                 href="mailto:Waltershaquil@gmail.com"
                 icon={<Mail className="w-4 h-4" />}
-                text="Waltershaquil@gmail.com"
+                text="waltershaquil@gmail.com"
               />
               <FooterLink
                 href="tel:+258846957899"
