@@ -8,7 +8,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
-import cv from "../resources/cv-11-2025.pdf";
+import cv from "../resources/cv-2026-01.pdf";
 
 const FooterBottom = () => {
   return (
@@ -72,7 +72,7 @@ const FooterBottom = () => {
             </h4>
             <ul className="space-y-4 text-foreground/70">
               <FooterLink
-                href="mailto:Waltershaquil@gmail.com"
+                href="mailto:waltershaquil@gmail.com"
                 icon={<Mail className="w-4 h-4" />}
                 text="waltershaquil@gmail.com"
               />
