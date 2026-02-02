@@ -305,7 +305,7 @@ const DescriptionAndPhoto = () => {
             <div className="flex-1">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                 <h3 className="text-2xl font-bold text-white">
-                  Desenvolvedor de Sistemas
+                  Software Development Intern
                 </h3>
                 <div className="flex items-center gap-2 text-accent bg-accent/10 px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0 w-fit">
                   <Calendar className="w-4 h-4" />
