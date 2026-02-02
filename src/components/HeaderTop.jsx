@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo1 from "../resources/circular logo website-01.png";
 
 const HeaderTop = () => {
@@ -36,8 +37,16 @@ const HeaderTop = () => {
     }
   };
 
+  const navItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <header
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? "bg-glass shadow-lg py-2"
         : "bg-transparent py-4"
@@ -45,7 +54,12 @@ const HeaderTop = () => {
     >
       <div className="container mx-auto px-6 text-white">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center gap-3"
+          >
             <img
               src={logo1}
               alt="Logo"
@@ -55,29 +69,32 @@ const HeaderTop = () => {
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Walter
             </span>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <NavLink onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              Home
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("projects")}>
-              Projects
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("experience")}>
-              Experience
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("education")}>
-              Education
-            </NavLink>
-            <button
+            {["Home", "Projects", "Experience", "Education"].map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
+              >
+                <NavLink onClick={() => item === "Home" ? window.scrollTo({ top: 0, behavior: "smooth" }) : scrollToSection(item.toLowerCase())}>
+                  {item}
+                </NavLink>
+              </motion.div>
+            ))}
+            <motion.button
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-white/10 transition-colors text-foreground/80 hover:text-primary"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            </motion.button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -98,26 +115,30 @@ const HeaderTop = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 mt-2 border-t border-white/10 animate-fade-in bg-glass backdrop-blur-xl rounded-xl p-4">
-            <div className="flex flex-col gap-4">
-              <MobileNavLink onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                Home
-              </MobileNavLink>
-              <MobileNavLink onClick={() => scrollToSection("projects")}>
-                Projects
-              </MobileNavLink>
-              <MobileNavLink onClick={() => scrollToSection("experience")}>
-                Experience
-              </MobileNavLink>
-              <MobileNavLink onClick={() => scrollToSection("education")}>
-                Education
-              </MobileNavLink>
-            </div>
-          </nav>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.nav
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden mt-2 border-t border-white/10 bg-glass backdrop-blur-xl rounded-xl overflow-hidden"
+            >
+              <div className="flex flex-col gap-4 p-4">
+                {["Home", "Projects", "Experience", "Education"].map((item) => (
+                  <MobileNavLink
+                    key={item}
+                    onClick={() => item === "Home" ? window.scrollTo({ top: 0, behavior: "smooth" }) : scrollToSection(item.toLowerCase())}
+                  >
+                    {item}
+                  </MobileNavLink>
+                ))}
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
@@ -134,7 +155,7 @@ const NavLink = ({ children, onClick }) => (
 const MobileNavLink = ({ children, onClick }) => (
   <button
     onClick={onClick}
-    className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2 px-4 hover:bg-white/5 rounded-lg"
+    className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2 px-4 hover:bg-white/5 rounded-lg w-full"
   >
     {children}
   </button>

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Github,
   Instagram,
@@ -11,17 +12,39 @@ import {
 import cv from "../resources/cv-2026-01.pdf";
 
 const FooterBottom = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
     <footer className="border-t border-white/10 bg-glass backdrop-blur-xl text-white relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse delay-500"></div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="container mx-auto px-6 py-20 relative z-10"
+      >
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
-          <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent inline-block">
               Walter Da Conceição
             </h3>
@@ -29,10 +52,10 @@ const FooterBottom = () => {
               Building the future, one line of code at a time. Let’s create
               something amazing together.
             </p>
-          </div>
+          </motion.div>
 
           {/* Resources Section */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Resources
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary rounded-full"></span>
@@ -62,10 +85,10 @@ const FooterBottom = () => {
                 text="Behance"
               />
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Section */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Contact
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary rounded-full"></span>
@@ -82,11 +105,14 @@ const FooterBottom = () => {
                 text="+258 84 69 57 899"
               />
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10"
+        >
           <p className="text-foreground/70 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} Walter Da Conceição. All Rights
             Reserved.
@@ -106,8 +132,8 @@ const FooterBottom = () => {
               icon={<Github className="w-5 h-5" />}
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 };
