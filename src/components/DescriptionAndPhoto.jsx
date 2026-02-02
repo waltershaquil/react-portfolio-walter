@@ -108,7 +108,7 @@ const DescriptionAndPhoto = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
 
         <div className="w-full max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center pb-[100px]">
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
