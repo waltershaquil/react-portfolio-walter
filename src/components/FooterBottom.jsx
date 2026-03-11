@@ -9,7 +9,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
-import cv from "../resources/cv-2026-01.pdf";
+import cv from "../resources/cv-2026-en-IF.pdf";
 
 const FooterBottom = () => {
   const containerVariants = {
