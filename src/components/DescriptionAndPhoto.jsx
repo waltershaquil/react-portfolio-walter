@@ -30,6 +30,12 @@ const DescriptionAndPhoto = () => {
     offset: ["start start", "end start"],
   });
 
+  const projectContainerRef = useRef(null);
+  const { scrollYProgress: projectScrollY } = useScroll({
+    target: projectContainerRef,
+    offset: ["start start", "end end"],
+  });
+
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
@@ -39,14 +45,14 @@ const DescriptionAndPhoto = () => {
       name: "Containerized DMS",
       description:
         "Implementation and containerization of an open-source Document Management System (DMS) using Docker. Configured persistency, isolated environments, and scalable deployments.",
-      link: "#",
+      link: "https://www.github.com/waltershaquil",
       icon: Server,
     },
     {
       name: "AI Supervisor Recommender",
       description:
         "Full-stack prototype with DNN model for academic supervisor recommendation. Includes full data preprocessing pipeline and AI analysis on the backend (Python, Flask, TensorFlow).",
-      link: "#",
+      link: "https://www.github.com/waltershaquil",
       icon: BrainCircuit,
     },
     {
@@ -60,21 +66,21 @@ const DescriptionAndPhoto = () => {
       name: "Personal Ledger",
       description:
         "Full-stack application for structured personal finance management, including transaction tracking, categorization, analytics, and secure authentication.",
-      link: "#",
+      link: "https://www.github.com/waltershaquil",
       icon: CircleDollarSign,
     },
     {
       name: "Second-hand Clothes Store",
       description:
         "E-commerce platform with customer interface and admin panel. Developed with React & Tailwind CSS, powered by a Supabase and PostgreSQL backend.",
-      link: "#",
+      link: "https://www.github.com/waltershaquil",
       icon: ShoppingBag,
     },
     {
       name: "Savings Challenge",
       description:
         "Next.js application for interactive visualization of savings and investment data, including basic savings categories and individual tracking.",
-      link: "#",
+      link: "https://www.github.com/waltershaquil",
       icon: TrendingUp,
     },
   ];
@@ -152,70 +158,73 @@ const DescriptionAndPhoto = () => {
           className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px]"
         />
 
-        <div className="w-full max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center pb-[100px]">
+        <div className="w-full max-w-7xl relative z-10 px-4 md:px-0">
+          <div className="flex flex-col md:flex-row gap-16 items-center pb-[100px]">
+            {/* Left Content Column */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="space-y-8"
+              className="space-y-8 flex-1"
             >
               <motion.div variants={itemVariants}>
-                <div className="inline-block px-4 py-1.5 mb-4 border border-primary/30 rounded-full bg-primary/10 backdrop-blur-sm">
-                  <span className="text-primary-light font-medium text-sm">Available for work</span>
-                </div>
-                <p className="text-foreground/70 text-lg mb-2">Hi there, I'm</p>
-                <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-transparent animate-gradient-x">
-                    Walter Da Conceição
-                  </span>
+                <h1 className="text-5xl md:text-[5.5rem] font-bold mb-6 leading-[1.1] tracking-tight text-white max-w-3xl">
+                  Walter Da Conceição
                 </h1>
-                <p className="text-xl text-primary font-medium mb-4">
-                  Engenheiro de Software | Sistemas Financeiros & Transformação Digital | Full-Stack
+                <p className="text-xl md:text-2xl text-white/50 font-normal leading-relaxed max-w-2xl">
+                  Software Engineer | Financial Systems & Digital Transformation | Full-Stack
                 </p>
-                <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
-                  Welcome to my page. Here I have some
-                  information about me, my projects, and more.
+                <p className="text-base text-white/40 mt-6 max-w-lg">
+                  Welcome to my portfolio. Building robust digital, financial, and management ecosystems.
                 </p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="flex gap-4 pt-4">
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href="#projects"
-                  className="px-8 py-3 bg-primary hover:bg-primary-light text-white rounded-xl font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50 flex items-center gap-2"
+                  className="px-8 py-4 bg-white hover:bg-gray-200 text-black rounded-full font-bold transition-all flex justify-center items-center gap-2"
                 >
                   View Projects
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-3 border-2 border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary rounded-xl font-medium transition-all hover:scale-105"
+                  className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-bold transition-all border border-white/10"
                 >
                   Contact Me
                 </a>
               </motion.div>
             </motion.div>
 
+            {/* Right Graphic/Photo Column */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 1,
-                ease: [0.25, 0.1, 0.25, 1.0],
-                delay: 0.2,
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1], // Custom snappy ease
+                delay: 0.4,
               }}
-              className="relative"
+              className="relative w-full max-w-lg flex justify-end shrink-0"
             >
-              <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-accent rounded-[32px] blur-3xl opacity-60 animate-glow"></div>
-                <div className="relative bg-glass p-2 rounded-[32px] transform rotate-3 hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
-                  <div className="bg-card rounded-[24px] overflow-hidden shadow-2xl relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
-                    <img
-                      src={walter}
-                      alt="Walter Da Conceicao"
-                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000 ease-out"
-                    />
-                  </div>
+              {/* Subtle accent glow behind the card cluster */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+              
+              <div className="relative w-full h-[400px] md:h-[500px]">
+
+
+                {/* Main Photo Card */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-0 -translate-y-1/2 w-[300px] md:w-[340px] aspect-[4/5] bg-[#121418] rounded-3xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] z-10 border border-white/5 transition-transform duration-700 hover:scale-[1.03]">
+                  {/* Thin subtle gradient line at the top of the card mimicking Paddle dashboards */}
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  
+                  <img
+                    src={walter}
+                    alt="Walter Da Conceicao"
+                    className="w-full h-full object-cover object-bottom filter grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  
+                  {/* Dark gradient overlay for modern sleekness */}
+                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#121418] to-transparent pointer-events-none"></div>
                 </div>
               </div>
             </motion.div>
@@ -272,53 +281,74 @@ const DescriptionAndPhoto = () => {
       </motion.section>
 
       {/* Projects Section */}
-      <motion.section
+      <section
         id="projects"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-20%" }}
-        variants={containerVariants}
-        className="py-24"
+        ref={projectContainerRef}
+        className="relative w-full"
+        style={{ height: `${projects.length * 100}vh` }}
       >
-        <motion.h2
-          variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent inline-block"
-        >
-          Projects
-        </motion.h2>
+        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden py-24">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white text-center absolute top-24 w-full">
+            Featured Projects
+          </h2>
+          <div className="relative w-full max-w-5xl h-[550px] md:h-[450px] mt-20 flex items-center justify-center">
+            {projects.map((project, idx) => {
+              // Calculate exactly when this specific card should start its exit animation
+              const startExit = idx / projects.length;
+              const endExit = (idx + 0.8) / projects.length;
+              const initialY = idx * 20; // Increased separation for better stacking visual
+              
+              // As user scrolls, the active card moves extremely fast UPWARDS (-800px)
+              const y = useTransform(projectScrollY, [startExit, endExit], [initialY, -800]);
+              
+              // Fade out abruptly halfway through the upward motion
+              const opacity = useTransform(projectScrollY, [startExit, startExit + 0.1], [1, 0]);
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <motion.a
-              key={idx}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              whileHover={scaleHoverRequest}
-              className="group block h-full"
-            >
-              <div className="bg-glass/80 backdrop-blur-md p-8 h-full flex flex-col rounded-2xl border border-white/5 hover:border-primary/50 transition-colors shadow-sm hover:shadow-2xl hover:shadow-primary/10 sticky top-0">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-500">
-                    <project.icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-500" />
+              return (
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={idx}
+                  className="absolute inset-x-0 mx-auto w-[92%] h-full md:w-full md:h-fit rounded-[2rem] border border-white/5 bg-[#121418] p-6 md:p-14 flex flex-col justify-between"
+                  style={{
+                    // Elements later in the array have lower z-index so they are "under" the stack
+                    zIndex: projects.length - idx,
+                    y,
+                    opacity,
+                    top: 0,
+                    // Subtle shadow to define individual cards
+                    boxShadow: "0 -10px 40px rgba(0,0,0,0.8)"
+                  }}
+                >
+                  <div className="flex flex-col md:flex-row gap-10 items-start">
+                    <div className="p-5 bg-white/5 rounded-2xl shrink-0 group hover:bg-white transition-colors">
+                      <project.icon className="w-10 h-10 text-white group-hover:text-black transition-colors" />
+                    </div>
+                    
+                    <div className="space-y-6 text-left w-full">
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <h4 className="text-2xl md:text-4xl font-bold text-white tracking-tight">
+                          {project.name}
+                        </h4>
+                        <div className="inline-flex w-fit px-4 py-2 rounded-full bg-white text-sm font-bold text-black hover:bg-gray-200 transition-colors cursor-pointer">
+                          View Project
+                        </div>
+                      </div>
+                      
+                      <div className="h-[1px] w-full bg-white/10"></div>
+                      
+                      <p className="text-white/60 leading-relaxed text-sm md:text-lg font-light max-w-3xl">
+                        {project.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="px-4 py-1.5 rounded-full bg-white/5 text-xs font-semibold text-foreground/60 border border-white/10 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                    View Project
-                  </div>
-                </div>
-
-                <h4 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  {project.name}
-                </h4>
-                <p className="text-foreground/70 leading-relaxed text-base flex-grow font-light">
-                  {project.description}
-                </p>
-              </div>
-            </motion.a>
-          ))}
+                </motion.a>
+              );
+            })}
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Experience Section */}
       <motion.section
