@@ -16,6 +16,10 @@ import {
   Briefcase,
   Calendar,
   GraduationCap,
+  Server,
+  BrainCircuit,
+  ShoppingBag,
+  TrendingUp,
 } from "lucide-react";
 import walter from "../resources/walter.jpg";
 
@@ -32,46 +36,46 @@ const DescriptionAndPhoto = () => {
 
   const projects = [
     {
+      name: "Containerized DMS",
+      description:
+        "Implementation and containerization of an open-source Document Management System (DMS) using Docker. Configured persistency, isolated environments, and scalable deployments.",
+      link: "#",
+      icon: Server,
+    },
+    {
+      name: "AI Supervisor Recommender",
+      description:
+        "Full-stack prototype with DNN model for academic supervisor recommendation. Includes full data preprocessing pipeline and AI analysis on the backend (Python, Flask, TensorFlow).",
+      link: "#",
+      icon: BrainCircuit,
+    },
+    {
       name: "Car Sales System",
       description:
-        "A full-stack car dealership management app. The frontend is built in React, and the backend is a RESTful API built with Spring Boot and PostgreSQL. It supports managing cars, customers, and sales records.",
+        "Robust enterprise full-stack app for car dealership management. React frontend for an intuitive UI, Spring Boot RESTful APIs, and PostgreSQL database.",
       link: "https://car-sales-react-fawn.vercel.app/",
       icon: Car,
     },
     {
-      name: "Movoo",
+      name: "Personal Ledger",
       description:
-        "Movoo is a ReactJS app that uses an API to showcase trending movies. Users can search for any movie, view details, and save their favorites to a personalized list. Simple, intuitive, and perfect for movie lovers!",
-      link: "https://react-movies-movoo.vercel.app/",
-      icon: Clapperboard,
-    },
-    {
-      name: "TaskMngr",
-      description:
-        "TaskMngr is a simple and efficient task manager built with ReactJS. It allows users to add tasks, view their details, and remove them with ease. Designed for simplicity and productivity, it's perfect for staying organized!",
-      link: "https://react-task-mngr-nu9b.vercel.app",
-      icon: BookmarkCheck,
-    },
-    {
-      name: "Save'o",
-      description:
-        "Save'o is a ReactJS app for managing savings. It helps users set monthly savings goals and track their progress by logging how much they save each month. Simple and effective for staying on top of financial goals!",
-      link: "https://app-poupanca-react.vercel.app",
+        "Full-stack application for structured personal finance management, including transaction tracking, categorization, analytics, and secure authentication.",
+      link: "#",
       icon: CircleDollarSign,
     },
     {
-      name: "Mine Swpr",
+      name: "Second-hand Clothes Store",
       description:
-        "Mine Swpr is a mobile Minesweeper game built with Flutter. It features an intuitive and responsive design, letting players uncover tiles and flag mines in a seamless gameplay experience. A classic puzzle game tailored for mobile!",
-      link: "https://github.com/waltershaquil/flutter-mine-sweeper",
-      icon: Bomb,
+        "E-commerce platform with customer interface and admin panel. Developed with React & Tailwind CSS, powered by a Supabase and PostgreSQL backend.",
+      link: "#",
+      icon: ShoppingBag,
     },
     {
-      name: "Auth System",
+      name: "Savings Challenge",
       description:
-        "A secure authentication system with Angular frontend and Spring Boot backend. Users are stored in a PostgreSQL database. Once authenticated, users can view a list of cars fetched from a custom API built with Spring.",
-      link: "https://auth-angular-kappa.vercel.app/",
-      icon: Lock,
+        "Next.js application for interactive visualization of savings and investment data, including basic savings categories and individual tracking.",
+      link: "#",
+      icon: TrendingUp,
     },
   ];
 
@@ -163,11 +167,14 @@ const DescriptionAndPhoto = () => {
                 <p className="text-foreground/70 text-lg mb-2">Hi there, I'm</p>
                 <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight tracking-tight">
                   <span className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-transparent animate-gradient-x">
-                    Walter Da Conceicao
+                    Walter Da Conceição
                   </span>
                 </h1>
+                <p className="text-xl text-primary font-medium mb-4">
+                  Engenheiro de Software | Sistemas Financeiros & Transformação Digital | Full-Stack
+                </p>
                 <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
-                  I'm a Developer, welcome to my page. Here I have some
+                  Welcome to my page. Here I have some
                   information about me, my projects, and more.
                 </p>
               </motion.div>
@@ -355,12 +362,46 @@ const DescriptionAndPhoto = () => {
                 BVM - Bolsa de Valores de Moçambique
               </p>
 
-              <p className="text-foreground/80 leading-loose text-base md:text-lg font-light">
-                Gained hands-on experience in systems development, working with
-                modern technologies and contributing to real-world projects.
-                Developed skills in problem-solving, teamwork, and software
-                engineering best practices.
+              <ul className="text-foreground/80 leading-relaxed text-base md:text-lg font-light list-disc pl-5 mt-4 space-y-2">
+                <li>Developed exchange modules in the Treasury Bonds Auction System for efficient management.</li>
+                <li>Full-stack development of critical internal systems: Public Procurement System (React+Express.js), Regulatory Forms Digitization (React+Node.js), and HR/Asset Management System (Laravel).</li>
+                <li>Implemented containerization of open-source document management solutions using Docker.</li>
+                <li>Maintained and optimized the BVM institutional website.</li>
+                <li>Collaborated in Linux/Windows server management, active directory support, and Python/Bash automation scripting.</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ scale: 1.01 }}
+          className="bg-glass/90 backdrop-blur-xl p-8 md:p-10 rounded-2xl border border-white/5 hover:border-primary/30 transition-all shadow-lg mt-8"
+        >
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="shrink-0">
+              <div className="p-5 bg-primary/10 rounded-2xl inline-block">
+                <Briefcase className="w-10 h-10 text-primary" />
+              </div>
+            </div>
+            <div className="flex-1 space-y-4">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <h3 className="text-2xl font-bold text-white">
+                  IT Intern
+                </h3>
+                <div className="flex items-center gap-2 text-accent bg-accent/10 px-4 py-1.5 rounded-full text-sm font-semibold mt-2 md:mt-0 w-fit">
+                  <Calendar className="w-4 h-4" />
+                  <span>March 2025 - July 2025</span>
+                </div>
+              </div>
+              <p className="text-primary-light text-xl font-semibold">
+                LG Transport, Maputo
               </p>
+              <ul className="text-foreground/80 leading-relaxed text-base md:text-lg font-light list-disc pl-5 mt-4 space-y-2">
+                <li>Automated cloud backups and digitized documents ensuring data integrity.</li>
+                <li>Administered LAN networks, WPA2/WPA3 secure Wi-Fi, and performed hardware maintenance.</li>
+                <li>Managed vendors and technical support for GPS/LTE fleet devices.</li>
+              </ul>
             </div>
           </div>
         </motion.div>
@@ -394,7 +435,7 @@ const DescriptionAndPhoto = () => {
               </div>
               <div className="space-y-2">
                 <h3 className="text-xl font-bold text-white leading-tight">
-                  Licenciatura em Engenharia Informática
+                  Licenciatura em Engenharia Informática e de Telecomunicações
                 </h3>
                 <p className="text-primary-light font-medium">
                   Instituto Superior de Transportes e Comunicações (ISUTC)

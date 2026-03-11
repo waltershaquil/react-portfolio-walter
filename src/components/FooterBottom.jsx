@@ -102,7 +102,12 @@ const FooterBottom = () => {
               <FooterLink
                 href="tel:+258846957899"
                 icon={<Phone className="w-4 h-4" />}
-                text="+258 84 69 57 899"
+                text="+258 84 695 7899"
+              />
+              <FooterLink
+                href="tel:+258833735482"
+                icon={<Phone className="w-4 h-4" />}
+                text="+258 83 373 5482"
               />
             </ul>
           </motion.div>
